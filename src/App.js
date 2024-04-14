@@ -1,11 +1,13 @@
-import "./App.css";
+import { Provider } from "react-redux";
+import Body from "./components/Body";
+import appStore from "./utils/appStore";
 
 function App() {
-  return <div className="App">
-    <h2 className="text-3xl font-bold underline text-green-800">
-    Hello Let's build Crunchy Roll GPT
-    </h2>
-  </div>;
+  return (
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
+  );
 }
 
 export default App;
