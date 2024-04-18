@@ -1,0 +1,1 @@
+export const topAnime ="https://api.jikan.moe/v4/top/anime?";
