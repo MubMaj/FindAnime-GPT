@@ -3,6 +3,7 @@ import bgImage from "../assets/img/background-desktop@2x.png";
 import { AiHeaderKeys, openApiURL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import {addGptAnimeResult} from "../utils/gptSlice"
+// import openai from "../utils/openAi"
 
 const SearchBar = () => {
   const searchText = useRef(null);
@@ -16,10 +17,12 @@ const SearchBar = () => {
 
   const handleGptSearch = async () => {
 
+    // console.log(searchText.current.value);
+
     const optQuery =
       "Act as a Anime recommendation system and suggest some Anmie for the query:" +
       searchText.current.value +
-      "only give me name of 3 anime, comma seprated like the `Example Result` i dont want any details of anythig just tell the name of the anime according to the `query` without saying any other words, dont say stuff like `Sure! Here are bla bla bla` just give me an array of 3 anime name like this. Example Result: Attack on Titan, My Hero Academia, One Piece";
+      "only give me name of 3 anime, comma seprated like the `Example Result` i dont want any details of anythig just tell the name of the anime according to the `query` without saying any other words, dont say stuff like `Sure! Here are bla bla bla` just give me an array of 3 anime name like this dont even use `'` or even full stop at the end just give the result as shown . Example Result: Attack on Titan, My Hero Academia, One Piece and i Repeat please dont say another word accept the name of the animes";
 
     const url = openApiURL;
     const options = {
@@ -45,8 +48,8 @@ const SearchBar = () => {
 
     const gptResponse = await fetch(url, options);
     const result = await gptResponse.json();
+    // console.log(result.result);
 
-    console.log(result.result);
 
     const sortAnime = result?.result?.split(",");
 
@@ -54,6 +57,13 @@ const SearchBar = () => {
 
     const finalResult = await Promise.all(allPromise);
     dispatch(addGptAnimeResult({animeNames:sortAnime, animeResults:finalResult}));
+    
+    // const chatCompletion = await openai.chat.completions.create({
+    //   messages: [{ role: 'user', content: optQuery }],
+    //   model: 'gpt-3.5-turbo',
+    // });
+    // console.log(chatCompletion.choices);
+
   };
 
   return (

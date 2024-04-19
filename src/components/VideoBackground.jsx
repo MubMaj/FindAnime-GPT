@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoBackground = ({ trailer }) => {
   return (
-    <div className="absolute top-[-10vh] left-0 right-0 -z-10">
+    <div className="absolute top-0 max-sm:top-[20vh] max-md:top-[7vh] left-0 right-0 z-[-10]">
       <iframe
         className="aspect-video w-full absolute"
         src={

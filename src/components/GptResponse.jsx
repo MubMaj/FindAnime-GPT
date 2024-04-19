@@ -8,7 +8,7 @@ const GptResponse = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-5/6 bg-black text-white px-12 opacity-85">
+      <div className="w-5/6 max-sm:w-11/12 max-sm:px-2 bg-black text-white px-12 opacity-85">
           {animeNames.map((anime, index) => <AnimeList key={anime} title={anime} animes={animeResults[index]} />) }
       </div>
     </div>

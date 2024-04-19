@@ -16,7 +16,7 @@ const MainContainer = () => {
   const { title_english, title, synopsis, trailer } = mainAnime;
 
   return (
-    <div>
+    <div className="relative -mt-[19vh] bg-black z-[-6]">
       <VideoTitle title_english={title_english} title={title} synopsis={synopsis} />
       <VideoBackground trailer={trailer} />
     </div>
