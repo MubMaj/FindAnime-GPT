@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import bgImage from "../assets/img/background-desktop@2x.png";
-import { AiHeaderKeys } from "../utils/constants";
+import { AiHeaderKeys, openApiURL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import {addGptAnimeResult} from "../utils/gptSlice"
 
@@ -21,7 +21,7 @@ const SearchBar = () => {
       searchText.current.value +
       "only give me name of 3 anime, comma seprated like the `Example Result` i dont want any details of anythig just tell the name of the anime according to the `query` without saying any other words, dont say stuff like `Sure! Here are bla bla bla` just give me an array of 3 anime name like this. Example Result: Attack on Titan, My Hero Academia, One Piece";
 
-    const url = "https://open-ai21.p.rapidapi.com/chatbotapi";
+    const url = openApiURL;
     const options = {
       method: "POST",
       headers: AiHeaderKeys,
@@ -48,7 +48,7 @@ const SearchBar = () => {
 
     console.log(result.result);
 
-    const sortAnime = result?.result.split(",");
+    const sortAnime = result?.result?.split(",");
 
     const allPromise = sortAnime.map((res) => filterSearch(res));
 

@@ -1,18 +1,19 @@
 import { useEffect } from "react";
-import { topAnime } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { TopAnimeURL} from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
 import { addTopAnime } from "../utils/animeSlice";
 
 const useTopAnime = () => {
+  const topAnime = useSelector(store => store.anime.topAnime)
   const dispatch = useDispatch();
 
+  const fetchData = async () => {
+    const response = await fetch(TopAnimeURL);
+    const json = await response.json();
+    dispatch(addTopAnime(json.data));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(topAnime);
-      const json = await response.json();
-      dispatch(addTopAnime(json.data));
-    };
-    fetchData();
+    !topAnime && fetchData();
   }, []);
 };
 

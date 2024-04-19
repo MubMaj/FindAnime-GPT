@@ -1,18 +1,20 @@
 import { useEffect } from "react";
-import { SchedulesAnime } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { SchedulesAnimeURL } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
 import { addSchedulesAnime } from "../utils/animeSlice";
 
 const useSchedulesAnime = () => {
+  const schedulesAnime = useSelector((store) => store.anime.schedulesAnime);
   const dispatch = useDispatch();
 
+  const fetchData = async () => {
+    const response = await fetch(SchedulesAnimeURL);
+    const json = await response.json();
+    dispatch(addSchedulesAnime(json.data));
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(SchedulesAnime);
-      const json = await response.json();
-      dispatch(addSchedulesAnime(json.data));
-    };
-    fetchData();
+    !schedulesAnime && fetchData();
   }, []);
 };
 
