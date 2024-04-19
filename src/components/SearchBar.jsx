@@ -57,7 +57,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex justify-center pt-[3%]">
+    <div className="flex justify-center pt-[3%] max-sm:pt-[10%]">
       <div className="fixed top-0 left-0 -z-10">
         <img
           srcSet={bgImage}
@@ -66,17 +66,17 @@ const SearchBar = () => {
         ></img>
       </div>
       <form
-        className="w-2/3 m-8 p-4 gap-4 grid grid-cols-12 items-center justify-center bg-black border border-gray-700 rounded-md"
+        className="w-2/3 max-sm:w-screen m-8 max-sm:m-1 p-4 max-sm:p-2 gap-4 grid grid-cols-12 items-center justify-center bg-black border border-gray-700 rounded-md"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
-          className="px-4 py-2 text-xl col-span-9 rounded-lg"
+          className="px-4 py-2 max-sm:text-lg text-xl col-span-9 rounded-lg"
           type="text"
-          placeholder="What type of Anime you are looking for 🤔"
+          placeholder="Find your Anime 😎"
         />
         <button
-          className="py-1.5 col-span-3 text-white font-semibold text-2xl bg-purple-900  rounded-lg hover:bg-orange-500"
+          className="py-1.5 max-sm:text-lg col-span-3 text-white font-semibold text-2xl bg-purple-900  rounded-lg hover:bg-orange-500"
           type="submit"
           onClick={handleGptSearch}
         >

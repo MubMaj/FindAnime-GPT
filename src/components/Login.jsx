@@ -101,7 +101,7 @@ const Login = () => {
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className="flex flex-col rounded-xl items-center w-3/12 bg-black bg-opacity-60 px-5 py-10 mt-14"
+          className="flex flex-col rounded-xl items-center max-sm:w-4/6 w-3/12 bg-black bg-opacity-60 px-5 py-10 mt-14"
         >
           <h1 className="font-bold text-3xl mb-6 ms-3 self-start cursor-default">
             {isSignInForm ? "Sign In" : "Sign Up"}

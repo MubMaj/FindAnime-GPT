@@ -4,7 +4,7 @@ const AnimeCard = ({ anime }) => {
   const { images, title, genres, status } = anime;
   return (
     <div>
-      <div className="w-56 h-[21rem]">
+      <div className="w-56 max-sm:w-20 max-sm:h-32 h-[21rem]">
         <img
           className="h-full w-full"
           alt="anime Name"

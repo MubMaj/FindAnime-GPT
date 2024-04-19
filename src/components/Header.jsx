@@ -48,8 +48,8 @@ function Header() {
   };
 
   return (
-    <div className=" px-10 max-sm:px-4 bg-gradient-to-br from-black flex justify-between items-center">
-      <div>
+    <div className="px-10 bg-gradient-to-br max-sm:pb-8 from-black flex justify-between max-sm:flex-col items-center">
+      <div className="max-sm:mb-4">
         <svg className="w-36 my-5 fill-orange-500" viewBox="0 0 136 24">
           <title id="animeGpt">Anime GPT</title>
           <path d={svgPath}></path>
@@ -58,7 +58,7 @@ function Header() {
       {user && (
         <div className="flex gap-20">
           <button
-            className="text-white justify-center items-center flex gap-2 bg-gray-600 rounded-lg"
+            className="text-white items-center flex gap-2 bg-gray-600 rounded-lg"
             onClick={handlegptSearch}
           >
             <div className="w-12">
@@ -76,9 +76,6 @@ function Header() {
             <button
               onClick={() => {
                 setisMenuOpen(!isMenuOpen);
-                setTimeout(() => {
-                  setisMenuOpen(false);
-                }, 4000);
               }}
             >
               <img
@@ -88,7 +85,7 @@ function Header() {
               />
             </button>
             {isMenuOpen && (
-              <ul className="flex flex-col absolute top-16 right-12 border-2 border-red-500 text-white font-semibold bg-orange-500 text-center rounded-xl signOutOptions mt-3">
+              <ul className="flex flex-col absolute top-16 max-sm:top-36 right-10 max-sm:right-20 border-2 border-red-500 text-white font-semibold bg-orange-500 text-center rounded-xl signOutOptions mt-3">
                 <li className="p-3 cursor-default text-gray-300">
                   {user?.displayName}
                 </li>
