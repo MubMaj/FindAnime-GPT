@@ -3,7 +3,7 @@ import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";
 
 const MainContainer = () => {
-  const animes = useSelector((store) => store?.anime?.topAnime);
+  const animes = useSelector((store) => store?.anime?.recommendAnime);
 
   if (!animes) return;
   
@@ -11,7 +11,6 @@ const MainContainer = () => {
 
   if (!mainAnime) return;
   
-  console.log(mainAnime);
 
 
   const { title_english, title, synopsis, trailer } = mainAnime;

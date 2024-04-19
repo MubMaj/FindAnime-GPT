@@ -6,3 +6,26 @@
   margin: 0;
   padding: 0;
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: 20px;  /* Firefox */
+}
+}
+
+.signOutOptions::before{
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -.7rem;
+  right: .7rem;
+  transform: rotate(45deg);
+  border-left: 2px solid rgb(239 68 68 / var(--tw-border-opacity));
+  border-top: 2px solid rgb(239 68 68 / var(--tw-border-opacity));
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}

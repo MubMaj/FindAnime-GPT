@@ -2,9 +2,9 @@ import React from "react";
 
 const VideoBackground = ({ trailer }) => {
   return (
-    <div className="absolute top-0 left-0 right-0 -z-10">
+    <div className="absolute top-[-10vh] left-0 right-0 -z-10">
       <iframe
-        className="aspect-video w-full"
+        className="aspect-video w-full absolute"
         src={
           "https://www.youtube-nocookie.com/embed/" +
           trailer.youtube_id +
