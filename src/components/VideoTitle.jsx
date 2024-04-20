@@ -5,7 +5,7 @@ const VideoTitle = ({ title_english, title, synopsis }) => {
     <div className="w-full h-screen max-sm:pt-[39vh] max-md:pt-96 max-sm:pl-7 pt-64 pl-20 text-white bg-gradient-to-tr from-black">
       <div className="flex flex-col gap-3">
         <h2
-          className="max-sm:text-base font-bold text-3xl"
+          className="font-bold text-3xl"
           style={{ "textShadow": "4px 4px black" }}
           >
           {title_english}

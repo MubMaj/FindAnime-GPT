@@ -85,7 +85,7 @@ function Header() {
               />
             </button>
             {isMenuOpen && (
-              <ul className="flex flex-col absolute top-16 max-sm:top-36 right-10 max-sm:right-20 border-2 border-red-500 text-white font-semibold bg-orange-500 text-center rounded-xl signOutOptions mt-3">
+              <ul className="flex flex-col absolute top-16 max-sm:top-36 right-10 max-sm:right-14 border-2 border-red-500 text-white font-semibold bg-orange-500 text-center rounded-xl signOutOptions mt-3">
                 <li className="p-3 cursor-default text-gray-300">
                   {user?.displayName}
                 </li>

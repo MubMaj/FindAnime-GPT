@@ -19,6 +19,7 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+  const confirmPassword = useRef(null);
 
   const handleBtnClick = () => {
     // Validate a form
@@ -31,6 +32,10 @@ const Login = () => {
     if (massage) return;
 
     if (!isSignInForm) {
+      if (password.current.value !== confirmPassword.current.value) {
+        setErrMassage("Password did not match");
+        return;
+      }
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
@@ -131,9 +136,18 @@ const Login = () => {
             id="password"
             ref={password}
             type="password"
-            placeholder="Password"
+            placeholder={isSignInForm ? "Password" : "New Password"}
             className="p-2 m-2 w-11/12 rounded-sm bg-gray-700"
           />
+          {!isSignInForm && (
+            <input
+              id="password"
+              ref={confirmPassword}
+              type="password"
+              placeholder="Confirm Password"
+              className="p-2 m-2 w-11/12 rounded-sm bg-gray-700"
+            />
+          )}
           <button
             className="p-2 m-2 font-bold bg-orange-500 text-black w-11/12 mt-9 hover:bg-red-600 hover:text-white rounded-lg"
             onClick={handleBtnClick}

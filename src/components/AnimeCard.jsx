@@ -12,11 +12,11 @@ const AnimeCard = ({ anime }) => {
         />
       </div>
       <div className="mt-3">
-        <h3 className="my-1 line-clamp-1 text-lg font-semibold">{title}</h3>
-        <h2 className="line-clamp-1 text-gray-400">
+        <h3 className="my-1 line-clamp-1 text-lg max-sm:text-sm font-semibold">{title}</h3>
+        <h2 className="line-clamp-1 max-sm:text-xs text-gray-400">
           {genres.map((res) => res.name + " ")}
         </h2>
-        <h3 className="line-clamp-1 text-gray-600">{status}</h3>
+        <h3 className="line-clamp-1 max-sm:text-xs text-gray-600">{status}</h3>
       </div>
     </div>
   );
