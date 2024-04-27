@@ -1,11 +1,11 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
 import { toggleGpt } from "../utils/gptSlice";
-import { svgPath } from "../utils/constants";
+import logo from '../assets/img/logo.png';
 
 function Header() {
   const navigate = useNavigate();
@@ -50,13 +50,10 @@ function Header() {
   return (
     <div className="px-10 bg-gradient-to-br max-sm:pb-8 from-black flex justify-between max-sm:flex-col items-center">
       <div className="max-sm:mb-4">
-        <svg className="w-36 my-5 fill-orange-500" viewBox="0 0 136 24">
-          <title id="animeGpt">Anime GPT</title>
-          <path d={svgPath}></path>
-        </svg>
+       <img className="w-6/12" src={logo} alt="logo" />
       </div>
       {user && (
-        <div className="flex gap-20">
+        <div className="flex gap-20 p-3">
           <button
             className="text-white items-center flex gap-2 bg-gray-600 rounded-lg"
             onClick={handlegptSearch}
