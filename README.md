@@ -1,4 +1,4 @@
-# Crunchy Roll GPT
+# Anime GPT
 
 - 
 
@@ -15,6 +15,6 @@
         - Series Suggestions
             - Series List
 
-- Crunchy Roll GPT
+- Anime GPT
     - Search Bar
     - Movie Suggestion
